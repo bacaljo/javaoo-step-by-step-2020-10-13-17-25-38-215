@@ -50,14 +50,14 @@ public class Practice08Test {
         klass.assignLeader(jerry);
         assertThat(klass.getLeader()).isEqualTo(jerry);
     }
-//
-//    @Test
-//    public void should_student_have_name_age_and_class_number() throws Exception {
-//        Student tom = new Student(1, "Tom", 21, klass);
-//        assertThat(tom.getName()).isEqualTo("Tom");
-//        assertThat(tom.getAge()).isEqualTo(21);
-//        assertThat(tom.getKlass()).isEqualTo(klass);
-//    }
+
+    @Test
+    public void should_student_have_name_age_and_class_number() throws Exception {
+        Student tom = new Student(1, "Tom", 21, klass);
+        assertThat(tom.getName()).isEqualTo("Tom");
+        assertThat(tom.getAge()).isEqualTo(21);
+        assertThat(tom.getKlass()).isEqualTo(klass);
+    }
 //
 //    @Test
 //    public void should_student_introduce_with_class() throws Exception {
