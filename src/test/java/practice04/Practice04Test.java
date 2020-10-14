@@ -39,10 +39,10 @@ public class Practice04Test {
         assertThat(tom.getName()).isEqualTo("Tom");
         assertThat(tom.getAge()).isEqualTo(21);
     }
-//
-//    @Test
-//    public void should_worker_introduce_itself_with_no_field() throws Exception {
-//        Worker tom = new Worker("Tom", 21);
-//        assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Worker. I have a job.");
-//    }
+
+    @Test
+    public void should_worker_introduce_itself_with_no_field() throws Exception {
+        Worker tom = new Worker("Tom", 21);
+        assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Worker. I have a job.");
+    }
 }
