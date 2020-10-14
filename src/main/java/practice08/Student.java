@@ -14,7 +14,11 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        return String.format("%s I am a Student. I am at %s.",
-                super.introduce(), klass.getDisplayName());
+        boolean isClassLeader = klass.getLeader() != null && klass.getLeader().equals(this);
+
+        return String.format("%s I am a Student. I am %s %s.",
+                super.introduce(), isClassLeader
+                        ? "Leader of"
+                        : "at", klass.getDisplayName());
     }
 }
