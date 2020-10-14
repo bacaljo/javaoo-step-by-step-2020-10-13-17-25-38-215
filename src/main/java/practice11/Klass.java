@@ -35,6 +35,7 @@ public class Klass implements ClassEventManager {
         }
 
         leader = student;
+        notifySubscribersAboutANewClassLeader(this, leader);
     }
 
     public void appendMember(Student student) {
@@ -51,5 +52,10 @@ public class Klass implements ClassEventManager {
     @Override
     public void notifySubscribersAboutANewStudent(Klass klass, Student student) {
         classEventListenerList.forEach(classEventListener -> classEventListener.newStudentUpdate(klass, student));
+    }
+
+    @Override
+    public void notifySubscribersAboutANewClassLeader(Klass klass, Student student) {
+        classEventListenerList.forEach(classEventListener -> classEventListener.newClassLeaderUpdate(klass, student));
     }
 }

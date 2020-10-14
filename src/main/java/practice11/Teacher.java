@@ -49,4 +49,10 @@ public class Teacher extends Person implements ClassEventListener {
         System.out.printf("I am %s. I know %s has joined %s.\n",
                 getName(), student.getName(), klass.getDisplayName());
     }
+
+    @Override
+    public void newClassLeaderUpdate(Klass klass, Student student) {
+        System.out.printf("I am %s. I know %s become Leader of %s.\n",
+                getName(), student.getName(), klass.getDisplayName());
+    }
 }
