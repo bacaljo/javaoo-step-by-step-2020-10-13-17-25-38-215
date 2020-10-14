@@ -79,12 +79,12 @@ public class Practice08Test {
         assertThat(tom.getAge()).isEqualTo(21);
         assertThat(tom.getKlass()).isEqualTo(klass);
     }
-//
-//    @Test
-//    public void should_teacher_introduce_itself_with_which_class_it_teaches() throws Exception {
-//        Teacher tom = new Teacher(1, "Tom", 21, klass);
-//        assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I teach Class 2.");
-//    }
+
+    @Test
+    public void should_teacher_introduce_itself_with_which_class_it_teaches() throws Exception {
+        Teacher tom = new Teacher(1, "Tom", 21, klass);
+        assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I teach Class 2.");
+    }
 //
 //    @Test
 //    public void should_teacher_introduce_itself_with_no_class_teaching() throws Exception {
