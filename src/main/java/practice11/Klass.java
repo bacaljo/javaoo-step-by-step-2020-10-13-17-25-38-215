@@ -3,14 +3,16 @@ package practice11;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Klass {
+public class Klass implements ClassEventManager {
     private int number;
     private Student leader;
     private List<Student> studentList;
+    private List<ClassEventListener> classEventListenerList;
 
     public Klass(int number) {
         this.number = number;
         studentList = new ArrayList<>();
+        classEventListenerList = new ArrayList<>();
     }
 
     public int getNumber() {
@@ -37,5 +39,17 @@ public class Klass {
 
     public void appendMember(Student student) {
         studentList.add(student);
+        notifySubscribersAboutANewStudent(this, student);
+    }
+
+
+    @Override
+    public void subscribe(ClassEventListener classEventListener) {
+        classEventListenerList.add(classEventListener);
+    }
+
+    @Override
+    public void notifySubscribersAboutANewStudent(Klass klass, Student student) {
+        classEventListenerList.forEach(classEventListener -> classEventListener.newStudentUpdate(klass, student));
     }
 }
