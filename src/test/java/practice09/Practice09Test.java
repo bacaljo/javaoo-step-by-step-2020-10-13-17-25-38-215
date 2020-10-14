@@ -62,14 +62,13 @@ public class Practice09Test {
     private String systemOut() {
         return outContent.toString();
     }
-//
-//    @Test
-//    public void should_class_assign_a_member_student_as_leader() throws Exception {
-//        Student jerry = new Student(1, "Jerry", 8, klass);
-//        klass.appendMember(jerry);
-//        klass.assignLeader(jerry);
-//        assertThat(klass.getLeader()).isEqualTo(jerry);
-//    }
+
+    @Test
+    public void should_class_assign_a_member_student_as_leader() throws Exception {
+        Student jerry = new Student(1, "Jerry", 8, klass);
+        klass.assignLeader(jerry);
+        assertThat(klass.getLeader()).isNull();
+    }
 
     @Test
     public void should_student_have_name_age_and_class_number() throws Exception {
@@ -84,14 +83,14 @@ public class Practice09Test {
         Student tom = new Student(1, "Tom", 21, klass);
         assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Student. I am at Class 2.");
     }
-//
-//    @Test
-//    public void should_student_introduce_itself_as_class_leader() throws Exception {
-//        Student tom = new Student(1, "Tom", 21, klass);
-//        klass.appendMember(tom);
-//        klass.assignLeader(tom);
-//        assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.");
-//    }
+
+    @Test
+    public void should_student_introduce_itself_as_class_leader() throws Exception {
+        Student tom = new Student(1, "Tom", 21, klass);
+        klass.appendMember(tom);
+        klass.assignLeader(tom);
+        assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.");
+    }
 
     @Test
     public void should_teacher_have_name_and_age_and_class() throws Exception {
