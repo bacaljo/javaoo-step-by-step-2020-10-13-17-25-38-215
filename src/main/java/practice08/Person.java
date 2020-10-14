@@ -1,7 +1,5 @@
 package practice08;
 
-import java.util.Objects;
-
 public class Person {
     private int id;
     private String name;
@@ -27,5 +25,10 @@ public class Person {
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
         return id == person.id;
+    }
+
+    public String introduce() {
+        return String.format("My name is %s. I am %d years old.",
+                name, age);
     }
 }
