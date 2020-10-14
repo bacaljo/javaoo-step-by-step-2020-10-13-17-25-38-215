@@ -35,4 +35,9 @@ public class Teacher extends Person {
     public boolean isTeaching(Student student) {
         return classes.contains(student.getKlass());
     }
+
+    public String introduceWith(Student student) {
+        return String.format("%s I am a Teacher. I teach %s.",
+                super.introduce(), student.getName());
+    }
 }
