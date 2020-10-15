@@ -1,5 +1,7 @@
 package practice08;
 
+import common.IntroductionBuilder;
+
 public class Person {
     private int id;
     private String name;
@@ -28,7 +30,6 @@ public class Person {
     }
 
     public String introduce() {
-        return String.format("My name is %s. I am %d years old.",
-                name, age);
+        return new IntroductionBuilder().appendBasic(name, age).toString();
     }
 }

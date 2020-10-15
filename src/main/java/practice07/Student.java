@@ -1,5 +1,7 @@
 package practice07;
 
+import common.IntroductionBuilder;
+
 public class Student extends Person {
     private Klass klass;
 
@@ -14,7 +16,9 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        return String.format("%s I am a Student. I am at %s.",
-                super.introduce(), klass.getDisplayName());
+        return new IntroductionBuilder().appendBasic(getName(), getAge())
+                .appendStudent()
+                .appendStudentClass(klass.getDisplayName(), false)
+                .toString();
     }
 }

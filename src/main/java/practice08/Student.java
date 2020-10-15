@@ -1,5 +1,7 @@
 package practice08;
 
+import common.IntroductionBuilder;
+
 public class Student extends Person {
     private Klass klass;
 
@@ -16,9 +18,9 @@ public class Student extends Person {
     public String introduce() {
         boolean isClassLeader = klass.getLeader() != null && klass.getLeader().equals(this);
 
-        return String.format("%s I am a Student. I am %s %s.",
-                super.introduce(), isClassLeader
-                        ? "Leader of"
-                        : "at", klass.getDisplayName());
+        return new IntroductionBuilder().appendBasic(getName(), getAge())
+                .appendStudent()
+                .appendStudentClass(klass.getDisplayName(), isClassLeader)
+                .toString();
     }
 }
