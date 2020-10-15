@@ -35,7 +35,7 @@ public class IntroductionBuilder {
     }
 
     public IntroductionBuilder appendStudentClass(int klass) {
-        return this;
+        return appendSentence(String.format("I am at Class %d", klass));
     }
 
     public IntroductionBuilder appendStudentClass(String classDisplayName, boolean isClassLeader) {
