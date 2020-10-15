@@ -13,7 +13,7 @@ public class IntroductionBuilderTest {
 
     @Before
     public void setup() {
-        introductionBuilder = new IntroductionBuilder("John", 23);
+        introductionBuilder = new IntroductionBuilder();
     }
 
     @Test
@@ -42,7 +42,7 @@ public class IntroductionBuilderTest {
 
     @Test
     public void should_introduction_builder_append_basic_appends_the_correct_intro() {
-        introductionBuilder.appendBasic();
+        introductionBuilder.appendBasic("John", 23);
 
         assertThat("My name is John. I am 23 years old.").isEqualTo(introductionBuilder.toString());
     }

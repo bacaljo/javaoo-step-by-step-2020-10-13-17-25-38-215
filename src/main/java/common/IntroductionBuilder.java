@@ -4,14 +4,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class IntroductionBuilder {
-    private String name;
-    private int age;
     private StringBuilder stringBuilder;
 
-    public IntroductionBuilder(String name, int age) {
-        this.name = name;
-        this.age = age;
-
+    public IntroductionBuilder() {
         stringBuilder = new StringBuilder();
     }
 
@@ -25,7 +20,7 @@ public class IntroductionBuilder {
         return this;
     }
 
-    public IntroductionBuilder appendBasic() {
+    public IntroductionBuilder appendBasic(String name, int age) {
         return appendSentence(String.format("My name is %s", name))
                 .appendSentence(String.format("I am %d years old", age));
     }
