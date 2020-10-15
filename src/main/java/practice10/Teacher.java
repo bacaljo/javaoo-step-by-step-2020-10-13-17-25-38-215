@@ -1,5 +1,7 @@
 package practice10;
 
+import common.IntroductionBuilder;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,13 +25,15 @@ public class Teacher extends Person {
 
     @Override
     public String introduce() {
-        boolean hasAnyClass = !classes.isEmpty();
-        String classesDisplayName = (hasAnyClass)
-                ? String.format("Class %s", classes.stream().map(klass -> Integer.toString(klass.getNumber())).collect(Collectors.joining(", ")))
-                : "No Class";
+        List<Integer> classNumberList = classes.stream()
+                .map(Klass::getNumber)
+                .collect(Collectors.toList());
+        String teacherIntroduction = new IntroductionBuilder().appendTeacher()
+                .appendTeacherClass(classNumberList)
+                .toString();
 
-        return String.format("%s I am a Teacher. I teach %s.",
-                super.introduce(), classesDisplayName);
+        return String.format("%s %s",
+                super.introduce(), teacherIntroduction);
     }
 
     public boolean isTeaching(Student student) {
@@ -37,9 +41,10 @@ public class Teacher extends Person {
     }
 
     public String introduceWith(Student student) {
-        return String.format("%s I am a Teacher. I %s %s.",
-                super.introduce(),
-                (isTeaching(student)) ? "teach" : "don't teach",
-                student.getName());
+        String teacherIntroduction = new IntroductionBuilder().appendTeacher()
+                .appendTeacherStudent(student.getName(), isTeaching(student))
+                .toString();
+
+        return String.format("%s %s", super.introduce(), teacherIntroduction);
     }
 }

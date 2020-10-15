@@ -1,5 +1,7 @@
 package practice06;
 
+import common.IntroductionBuilder;
+
 public class Teacher extends Person {
     private int klass;
 
@@ -19,9 +21,10 @@ public class Teacher extends Person {
 
     @Override
     public String introduce() {
-        return String.format("%s I am a Teacher. I teach %s.",
-                super.introduce(), (klass >= 0)
-                        ? "Class " + klass
-                        : "No Class");
+        String teacherIntroduction = new IntroductionBuilder().appendTeacher()
+                .appendTeacherClass(klass)
+                .toString();
+
+        return String.format("%s %s", super.introduce(), teacherIntroduction);
     }
 }

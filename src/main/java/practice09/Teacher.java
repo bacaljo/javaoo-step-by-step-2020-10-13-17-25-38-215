@@ -1,5 +1,7 @@
 package practice09;
 
+import common.IntroductionBuilder;
+
 public class Teacher extends Person {
     private Klass klass;
 
@@ -19,18 +21,19 @@ public class Teacher extends Person {
     @Override
     public String introduce() {
         boolean hasAClass = klass != null;
+        String teacherIntroduction = new IntroductionBuilder().appendTeacher()
+                .appendTeacherClass((hasAClass) ? klass.getNumber() : -1)
+                .toString();
 
-        return String.format("%s I am a Teacher. I teach %s.",
-                super.introduce(),
-                hasAClass ? klass.getDisplayName() : "No Class");
+        return String.format("%s %s", super.introduce(), teacherIntroduction);
     }
 
     public String introduceWith(Student student) {
-        boolean isOwnStudent = student.getKlass().getNumber() == getKlass().getNumber();
+        boolean isOwnStudent = student.getKlass().getNumber() == klass.getNumber();
+        String teacherIntroduction = new IntroductionBuilder().appendTeacher()
+                .appendTeacherStudent(student.getName(), isOwnStudent)
+                .toString();
 
-        return String.format("%s I am a Teacher. I %s %s.",
-                super.introduce(),
-                (isOwnStudent) ? "teach" : "don't teach",
-                student.getName());
+        return String.format("%s %s", super.introduce(), teacherIntroduction);
     }
 }
