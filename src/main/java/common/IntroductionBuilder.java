@@ -1,6 +1,7 @@
 package common;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class IntroductionBuilder {
     private String name;
@@ -44,9 +45,16 @@ public class IntroductionBuilder {
     }
 
     public IntroductionBuilder appendTeacherClass(List<Integer> classNumberList) {
-        return appendSentence((classNumberList.isEmpty())
-                ? "I teach No Class"
-                : String.format("I teach Class %d", classNumberList.get(0)));
+        if (classNumberList.isEmpty()) {
+            return appendSentence("I teach No Class");
+        }
+
+        String appendedClassDisplayNames = String.format("Class %s",
+                classNumberList.stream()
+                        .map(integer -> Integer.toString(integer))
+                        .collect(Collectors.joining(", ")));
+
+        return appendSentence(String.format("I teach %s", appendedClassDisplayNames));
     }
 
     public String toString() {
