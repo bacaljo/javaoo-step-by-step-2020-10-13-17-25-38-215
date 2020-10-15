@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.Collections;
 
+import static java.util.Arrays.asList;
 import static org.fest.assertions.api.Assertions.assertThat;
 
 public class IntroductionBuilderTest {
@@ -79,5 +80,12 @@ public class IntroductionBuilderTest {
         introductionBuilder.appendTeacherClass(Collections.emptyList());
 
         assertThat("I teach No Class.").isEqualTo(introductionBuilder.toString());
+    }
+
+    @Test
+    public void should_introduction_builder_append_teacher_class_appends_the_correct_intro_given_teacher_has_a_class() {
+        introductionBuilder.appendTeacherClass(asList(2));
+
+        assertThat("I teach Class 2.").isEqualTo(introductionBuilder.toString());
     }
 }
