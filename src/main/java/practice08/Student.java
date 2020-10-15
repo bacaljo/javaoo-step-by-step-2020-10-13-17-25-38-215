@@ -16,7 +16,7 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        boolean isClassLeader = klass.getLeader() != null && klass.getLeader().equals(this);
+        boolean isClassLeader = this.equals(klass.getLeader());
         String studentIntroduction = new IntroductionBuilder().appendStudent()
                 .appendStudentClass(klass.getDisplayName(), isClassLeader)
                 .toString();
