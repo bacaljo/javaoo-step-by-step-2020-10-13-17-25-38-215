@@ -12,18 +12,12 @@ public class IntroductionBuilder {
         stringBuilder = new StringBuilder();
     }
 
-    private StringBuilder appendWithSpace(String text) {
+    public IntroductionBuilder appendSentence(String text) {
         if (stringBuilder.length() > 0) {
             stringBuilder.append(" ");
         }
 
-        stringBuilder.append(text);
-
-        return stringBuilder;
-    }
-
-    public IntroductionBuilder append(String introductionMessage) {
-        appendWithSpace(introductionMessage);
+        stringBuilder.append(text).append(".");
 
         return this;
     }

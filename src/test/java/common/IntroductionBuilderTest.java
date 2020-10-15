@@ -17,29 +17,22 @@ public class IntroductionBuilderTest {
     }
 
     @Test
-    public void should_introduction_builder_have_append_method_that_accepts_a_string_and_returns_the_same_introduction_builder() {
-        IntroductionBuilder returnedIntroductionBuilder = introductionBuilder.append("");
+    public void should_introduction_builder_have_append_sentence_method_that_accepts_a_string_and_returns_the_same_introduction_builder() {
+        IntroductionBuilder returnedIntroductionBuilder = introductionBuilder.appendSentence("");
     }
 
     @Test
-    public void should_introduction_builder_have_append_method_that_appends_strings_to_string_builder() {
-        introductionBuilder.append("Message");
+    public void should_introduction_builder_have_append_method_that_appends_sentence_strings_to_string_builder() {
+        introductionBuilder.appendSentence("Message");
 
-        assert("Message").equals(introductionBuilder.toString());
+        assert("Message.").equals(introductionBuilder.toString());
     }
 
     @Test
-    public void should_introduction_builder_append_mutiple_strings_separated_by_a_space() {
-        introductionBuilder.append("Hi").append("Hello");
+    public void should_introduction_builder_append_sentence_mutiple_strings_separated_by_a_space_and_end_with_period() {
+        introductionBuilder.appendSentence("Hi").appendSentence("Hello");
 
-        assert("Hi Hello").equals(introductionBuilder.toString());
-    }
-
-    @Test
-    public void should_introduction_builder_have_append_basic_method_that_appends_basic_intro_to_string_builder() {
-        introductionBuilder.append("Message");
-
-        assert("Message").equals(introductionBuilder.toString());
+        assert("Hi. Hello.").equals(introductionBuilder.toString());
     }
 
     @Test
