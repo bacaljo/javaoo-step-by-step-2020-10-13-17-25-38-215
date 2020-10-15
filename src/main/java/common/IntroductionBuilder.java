@@ -61,7 +61,7 @@ public class IntroductionBuilder {
     }
 
     public IntroductionBuilder appendWorkerJob() {
-        return appendSentence("I have a Job");
+        return appendSentence("I have a job");
     }
 
     public String toString() {

@@ -114,6 +114,6 @@ public class IntroductionBuilderTest {
     public void should_introduction_builder_append_worker_job_appends_the_correct_intro() {
         introductionBuilder.appendWorkerJob();
 
-        assertThat("I have a Job.").isEqualTo(introductionBuilder.toString());
+        assertThat("I have a job.").isEqualTo(introductionBuilder.toString());
     }
 }
