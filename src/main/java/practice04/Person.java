@@ -20,7 +20,7 @@ public class Person {
     }
 
     public String introduce() {
-        return new IntroductionBuilder().appendBasic(name, age).toString();
+        return basicIntroduce();
     }
 
     public String basicIntroduce() {
