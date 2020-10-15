@@ -102,4 +102,11 @@ public class IntroductionBuilderTest {
 
         assertThat("I teach Class 2, 4.").isEqualTo(introductionBuilder.toString());
     }
+
+    @Test
+    public void should_introduction_builder_append_worker_appends_the_correct_intro() {
+        introductionBuilder.appendWorker();
+
+        assertThat("I am a Worker.").isEqualTo(introductionBuilder.toString());
+    }
 }

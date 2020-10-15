@@ -61,6 +61,10 @@ public class IntroductionBuilder {
         return appendSentence(String.format("I teach %s", appendedClassDisplayNames));
     }
 
+    public IntroductionBuilder appendWorker() {
+        return null;
+    }
+
     public String toString() {
         return stringBuilder.toString();
     }
