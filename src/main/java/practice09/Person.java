@@ -5,9 +5,9 @@ import common.IntroductionBuilder;
 import java.util.Objects;
 
 public class Person {
-    private int id;
-    private String name;
-    private int age;
+    private final int id;
+    private final String name;
+    private final int age;
 
     public Person(int id, String name, int age) {
         this.id = id;

@@ -1,7 +1,7 @@
 package practice08;
 
 public class Klass {
-    private int number;
+    private final int number;
     private Student leader;
 
     public Klass(int number) {

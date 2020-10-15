@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Klass implements ClassEventManager {
-    private int number;
+    private final int number;
+    private final List<Student> studentList;
+    private final List<ClassEventListener> classEventListenerList;
     private Student leader;
-    private List<Student> studentList;
-    private List<ClassEventListener> classEventListenerList;
 
     public Klass(int number) {
         this.number = number;

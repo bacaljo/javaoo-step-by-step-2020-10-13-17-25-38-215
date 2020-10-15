@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Teacher extends Person implements ClassEventListener {
-    private List<Klass> classes;
+    private final List<Klass> classes;
 
     public Teacher(int id, String name, int age) {
         super(id, name, age);

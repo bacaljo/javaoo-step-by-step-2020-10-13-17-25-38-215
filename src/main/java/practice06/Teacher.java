@@ -5,7 +5,7 @@ import common.IntroductionBuilder;
 import static common.PracticeConstants.NO_CLASS;
 
 public class Teacher extends Person {
-    private int klass;
+    private final int klass;
 
     public Teacher(String name, int age) {
         super(name, age);
