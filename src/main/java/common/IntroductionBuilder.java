@@ -46,7 +46,7 @@ public class IntroductionBuilder {
     public IntroductionBuilder appendTeacherClass(List<Integer> classNumberList) {
         return appendSentence((classNumberList.isEmpty())
                 ? "I teach No Class"
-                : "");
+                : String.format("I teach Class %d", classNumberList.get(0)));
     }
 
     public String toString() {
