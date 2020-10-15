@@ -16,9 +16,10 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        return new IntroductionBuilder().appendBasic(getName(), getAge())
-                .appendStudent()
+        String studentIntroduction = new IntroductionBuilder().appendStudent()
                 .appendStudentClass(klass.getDisplayName(), false)
                 .toString();
+
+        return String.format("%s %s", super.introduce(), studentIntroduction);
     }
 }

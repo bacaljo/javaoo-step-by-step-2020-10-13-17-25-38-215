@@ -17,10 +17,10 @@ public class Student extends Person {
     @Override
     public String introduce() {
         boolean isLeaderOfClass = klass.getLeader() != null && klass.getLeader().equals(this);
-
-        return new IntroductionBuilder().appendBasic(getName(), getAge())
-                .appendStudent()
+        String studentIntroduction = new IntroductionBuilder().appendStudent()
                 .appendStudentClass(klass.getDisplayName(), isLeaderOfClass)
                 .toString();
+
+        return String.format("%s %s", super.introduce(), studentIntroduction);
     }
 }
