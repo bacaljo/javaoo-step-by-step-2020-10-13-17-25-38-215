@@ -1,5 +1,7 @@
 package practice04;
 
+import common.IntroductionBuilder;
+
 public class Worker extends Person {
 
     public Worker(String name, int age) {
@@ -8,8 +10,11 @@ public class Worker extends Person {
 
     @Override
     public String introduce() {
-        return String.format("%s I am a Worker. I have a job.",
-                basicIntroduce());
+        String workerIntroduction = new IntroductionBuilder().appendWorker()
+                .appendWorkerJob()
+                .toString();
+
+        return String.format("%s %s", basicIntroduce(), workerIntroduction);
     }
 
 }
