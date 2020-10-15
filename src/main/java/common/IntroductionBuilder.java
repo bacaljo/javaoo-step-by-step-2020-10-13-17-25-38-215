@@ -43,6 +43,14 @@ public class IntroductionBuilder {
         return appendSentence("I am a Teacher");
     }
 
+    public IntroductionBuilder appendTeacherClass(int klass) {
+        if (klass == -1) {
+            return appendSentence("I teach No Class");
+        }
+
+        return appendSentence(String.format("I teach Class %d", klass));
+    }
+
     public IntroductionBuilder appendTeacherClass(List<Integer> classNumberList) {
         if (classNumberList.isEmpty()) {
             return appendSentence("I teach No Class");
