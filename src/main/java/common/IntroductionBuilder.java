@@ -38,7 +38,7 @@ public class IntroductionBuilder {
     }
 
     public IntroductionBuilder appendTeacher() {
-        return this;
+        return appendSentence("I am a Teacher");
     }
 
     public String toString() {
