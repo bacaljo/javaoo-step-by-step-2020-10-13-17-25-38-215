@@ -37,6 +37,10 @@ public class IntroductionBuilder {
                 : String.format("I am at %s", classDisplayName));
     }
 
+    public IntroductionBuilder appendTeacher() {
+        return this;
+    }
+
     public String toString() {
         return stringBuilder.toString();
     }
