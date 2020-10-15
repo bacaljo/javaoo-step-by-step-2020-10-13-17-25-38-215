@@ -65,6 +65,10 @@ public class IntroductionBuilder {
         return appendSentence("I am a Worker");
     }
 
+    public IntroductionBuilder appendWorkerJob() {
+        return this;
+    }
+
     public String toString() {
         return stringBuilder.toString();
     }
