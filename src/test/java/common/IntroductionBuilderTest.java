@@ -90,6 +90,20 @@ public class IntroductionBuilderTest {
     }
 
     @Test
+    public void should_introduction_builder_append_teacher_student_appends_the_correct_intro_given_own_student() {
+        introductionBuilder.appendTeacherStudent("John", true);
+
+        assertThat("I teach John.").isEqualTo(introductionBuilder.toString());
+    }
+
+    @Test
+    public void should_introduction_builder_append_teacher_student_appends_the_correct_intro_given_not_own_student() {
+        introductionBuilder.appendTeacherStudent("John", false);
+
+        assertThat("I don't teach John.").isEqualTo(introductionBuilder.toString());
+    }
+
+    @Test
     public void should_introduction_builder_append_teacher_class_appends_the_correct_intro_given_teacher_has_no_class() {
         introductionBuilder.appendTeacherClass(Collections.emptyList());
 
