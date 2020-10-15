@@ -62,7 +62,7 @@ public class IntroductionBuilder {
     }
 
     public IntroductionBuilder appendWorker() {
-        return null;
+        return appendSentence("I am a Worker");
     }
 
     public String toString() {
