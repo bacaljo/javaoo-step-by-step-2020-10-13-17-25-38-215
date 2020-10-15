@@ -34,6 +34,10 @@ public class IntroductionBuilder {
         return appendSentence("I am a Student");
     }
 
+    public IntroductionBuilder appendStudentClass(int klass) {
+        return this;
+    }
+
     public IntroductionBuilder appendStudentClass(String classDisplayName, boolean isClassLeader) {
         return appendSentence((isClassLeader)
                 ? String.format("I am Leader of %s", classDisplayName)
