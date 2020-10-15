@@ -33,7 +33,7 @@ public class IntroductionBuilder {
 
     public IntroductionBuilder appendStudentClass(String classDisplayName, boolean isClassLeader) {
         return (isClassLeader)
-                ? appendSentence(String.format("Leader of %s", classDisplayName))
+                ? appendSentence(String.format("I am Leader of %s", classDisplayName))
                 : appendSentence(String.format("I am at %s", classDisplayName));
     }
 

@@ -55,7 +55,7 @@ public class IntroductionBuilderTest {
     public void should_introduction_builder_append_student_class_appends_the_correct_intro_given_student_is_class_leader() {
         introductionBuilder.appendStudentClass("Class 2", true);
 
-        assertThat("Leader of Class 2.").isEqualTo(introductionBuilder.toString());
+        assertThat("I am Leader of Class 2.").isEqualTo(introductionBuilder.toString());
     }
 
     @Test
