@@ -88,4 +88,11 @@ public class IntroductionBuilderTest {
 
         assertThat("I teach Class 2.").isEqualTo(introductionBuilder.toString());
     }
+
+    @Test
+    public void should_introduction_builder_append_teacher_class_appends_the_correct_intro_given_teacher_has_multiple_classes() {
+        introductionBuilder.appendTeacherClass(asList(2, 4));
+
+        assertThat("I teach Class 2, 4.").isEqualTo(introductionBuilder.toString());
+    }
 }
