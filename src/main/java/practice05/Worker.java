@@ -10,10 +10,11 @@ public class Worker extends Person {
 
     @Override
     public String introduce() {
-        return new IntroductionBuilder().appendBasic(getName(), getAge())
-                .appendWorker()
+        String workerIntroduction = new IntroductionBuilder().appendWorker()
                 .appendWorkerJob()
                 .toString();
+
+        return String.format("%s %s", super.introduce(), workerIntroduction);
     }
 
 }
