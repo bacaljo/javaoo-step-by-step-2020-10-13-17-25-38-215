@@ -31,6 +31,10 @@ public class IntroductionBuilder {
         return appendSentence("I am a Student");
     }
 
+    public IntroductionBuilder appendStudentClass(String classDisplayName, boolean isClassLeader) {
+        return this;
+    }
+
     public String toString() {
         return stringBuilder.toString();
     }
