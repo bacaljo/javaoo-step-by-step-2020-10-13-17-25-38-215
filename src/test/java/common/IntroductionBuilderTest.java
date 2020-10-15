@@ -3,6 +3,8 @@ package common;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Collections;
+
 import static org.fest.assertions.api.Assertions.assertThat;
 
 public class IntroductionBuilderTest {
@@ -70,5 +72,12 @@ public class IntroductionBuilderTest {
         introductionBuilder.appendTeacher();
 
         assertThat("I am a Teacher.").isEqualTo(introductionBuilder.toString());
+    }
+
+    @Test
+    public void should_introduction_builder_append_teacher_class_appends_the_correct_intro_given_teacher_has_no_class() {
+        introductionBuilder.appendTeacherClass(Collections.emptyList());
+
+        assertThat("I teach No Class.").isEqualTo(introductionBuilder.toString());
     }
 }

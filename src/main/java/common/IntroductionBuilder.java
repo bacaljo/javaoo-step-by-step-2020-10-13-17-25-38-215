@@ -1,5 +1,7 @@
 package common;
 
+import java.util.List;
+
 public class IntroductionBuilder {
     private String name;
     private int age;
@@ -39,6 +41,10 @@ public class IntroductionBuilder {
 
     public IntroductionBuilder appendTeacher() {
         return appendSentence("I am a Teacher");
+    }
+
+    public IntroductionBuilder appendTeacherClass(List<Integer> classNumberList) {
+        return this;
     }
 
     public String toString() {
