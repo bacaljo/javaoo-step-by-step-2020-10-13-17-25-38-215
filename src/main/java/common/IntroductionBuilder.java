@@ -30,6 +30,10 @@ public class IntroductionBuilder {
         return this;
     }
 
+    public IntroductionBuilder appendStudent() {
+        return null;
+    }
+
     public String toString() {
         return stringBuilder.toString();
     }

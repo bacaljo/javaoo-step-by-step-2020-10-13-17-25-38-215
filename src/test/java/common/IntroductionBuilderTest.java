@@ -13,7 +13,7 @@ public class IntroductionBuilderTest {
 
     @Test
     public void should_introduction_builder_have_to_string_method_that_returns_an_empty_string_builder_result() {
-        assert(introductionBuilder.toString()).isEmpty();
+        assert (introductionBuilder.toString()).isEmpty();
     }
 
     @Test
@@ -25,20 +25,27 @@ public class IntroductionBuilderTest {
     public void should_introduction_builder_have_append_method_that_appends_sentence_strings_to_string_builder() {
         introductionBuilder.appendSentence("Message");
 
-        assert("Message.").equals(introductionBuilder.toString());
+        assert ("Message.").equals(introductionBuilder.toString());
     }
 
     @Test
     public void should_introduction_builder_append_sentence_mutiple_strings_separated_by_a_space_and_end_with_period() {
         introductionBuilder.appendSentence("Hi").appendSentence("Hello");
 
-        assert("Hi. Hello.").equals(introductionBuilder.toString());
+        assert ("Hi. Hello.").equals(introductionBuilder.toString());
     }
 
     @Test
     public void should_introduction_builder_append_basic_appends_the_correct_intro() {
         introductionBuilder.appendBasic();
 
-        assert("My name is John. I am 23 years old.").equals(introductionBuilder.toString());
+        assert ("My name is John. I am 23 years old.").equals(introductionBuilder.toString());
+    }
+
+    @Test
+    public void should_introduction_builder_append_student_appends_the_correct_intro() {
+        introductionBuilder.appendStudent();
+
+        assert ("I am a Student.").equals(introductionBuilder.toString());
     }
 }
