@@ -3,6 +3,8 @@ package common;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static common.PracticeConstants.NO_CLASS;
+
 public class IntroductionBuilder {
     private StringBuilder stringBuilder;
 
@@ -50,7 +52,7 @@ public class IntroductionBuilder {
     }
 
     public IntroductionBuilder appendTeacherClass(int klass) {
-        if (klass == -1) {
+        if (klass == NO_CLASS) {
             return appendSentence("I teach No Class");
         }
 

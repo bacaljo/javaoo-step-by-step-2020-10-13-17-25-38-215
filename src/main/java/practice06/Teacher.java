@@ -2,12 +2,14 @@ package practice06;
 
 import common.IntroductionBuilder;
 
+import static common.PracticeConstants.NO_CLASS;
+
 public class Teacher extends Person {
     private int klass;
 
     public Teacher(String name, int age) {
         super(name, age);
-        klass = -1;
+        klass = NO_CLASS;
     }
 
     public Teacher(String name, int age, int klass) {

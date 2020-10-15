@@ -2,6 +2,8 @@ package practice09;
 
 import common.IntroductionBuilder;
 
+import static common.PracticeConstants.NO_CLASS;
+
 public class Teacher extends Person {
     private Klass klass;
 
@@ -22,7 +24,7 @@ public class Teacher extends Person {
     public String introduce() {
         boolean hasAClass = klass != null;
         String teacherIntroduction = new IntroductionBuilder().appendTeacher()
-                .appendTeacherClass((hasAClass) ? klass.getNumber() : -1)
+                .appendTeacherClass((hasAClass) ? klass.getNumber() : NO_CLASS)
                 .toString();
 
         return String.format("%s %s", super.introduce(), teacherIntroduction);
